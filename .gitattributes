@@ -1,0 +1,21 @@
+# 统一换行符，避免 Windows / Linux 协作时产生无意义的整文件 diff
+* text=auto eol=lf
+
+# Windows 专属文件保持 CRLF
+*.cs      text eol=crlf
+*.csproj  text eol=crlf
+*.sln     text eol=crlf
+*.bat     text eol=crlf
+*.ps1     text eol=crlf
+
+# 二进制文件
+*.ico  binary
+*.png  binary
+*.jpg  binary
+*.bin  binary
+*.db   binary
+*.log  binary
+
+# 语言统计
+docs/** linguist-documentation
+frontend/docs/** linguist-documentation

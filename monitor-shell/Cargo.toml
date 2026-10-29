@@ -1,0 +1,19 @@
+[package]
+name = "monitor-shell"
+version = "0.1.0"
+edition = "2021"
+description = "心电监护系统桌面客户端（WebView2 壳）"
+
+# 独立于 e:\Monitor 主工作区，避免与后端服务共用 target
+[workspace]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon", "image-png", "image-ico"] }
+tauri-plugin-single-instance = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["net", "time", "rt"] }
+native-dialog = "0.9"

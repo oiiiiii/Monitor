@@ -1,0 +1,27 @@
+[package]
+name = "monitor-consumer"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "monitor-consumer"
+path = "src/main.rs"
+
+[dependencies]
+monitor-common = { path = "../monitor-common" }
+monitor-proto = { path = "../monitor-proto" }
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+config = { workspace = true }
+chrono = { workspace = true }
+lapin = { workspace = true }
+futures = { workspace = true }
+tokio-postgres = { workspace = true }
+deadpool-postgres = { workspace = true }
+reqwest = { workspace = true }

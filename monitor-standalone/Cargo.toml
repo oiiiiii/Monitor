@@ -1,0 +1,42 @@
+[package]
+name = "monitor-standalone"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "monitor"
+path = "src/main.rs"
+
+[dependencies]
+monitor-common = { path = "../monitor-common" }
+monitor-proto = { path = "../monitor-proto" }
+
+# 异步运行时
+tokio = { workspace = true }
+futures-util = { workspace = true }
+
+# 配置
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = "0.8"
+config = { workspace = true }
+
+# 日志
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+# 工具
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+chrono = { workspace = true }
+bytes = { workspace = true }
+
+# WebSocket
+tokio-tungstenite = { workspace = true }
+
+# SQLite
+sqlx = { version = "0.7", features = ["runtime-tokio", "sqlite", "chrono"] }
+
+# 测试和工具
+clap = { workspace = true }
+rand = { workspace = true }

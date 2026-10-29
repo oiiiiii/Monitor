@@ -1,0 +1,19 @@
+[package]
+name = "monitor-common"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+chrono = { workspace = true }
+bytes = { workspace = true }
+lapin = { workspace = true }
+futures = { workspace = true }
+tokio = { workspace = true }
+redis = { workspace = true }
+config = { workspace = true }

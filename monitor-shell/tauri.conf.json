@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "monitor-shell",
+  "version": "0.1.0",
+  "identifier": "com.monitor.shell",
+  "build": {
+    "frontendDist": "./app-ui"
+  },
+  "app": {
+    "windows": [],
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Monitor Team",
+    "copyright": "Copyright © 2026 Monitor Team",
+    "icon": [
+      "../logo.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "offlineInstaller"
+      }
+    }
+  }
+}

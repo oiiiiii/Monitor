@@ -1,0 +1,28 @@
+{
+  "MonitorExePath": "monitor.exe",
+  "ConfigFilePath": "config.toml",
+  "WebUrl": "http://localhost:3000",
+  "TcpPort": 9000,
+  "WsPort": 8080,
+  "HttpPort": 3000,
+  "IpToBed": {
+    "10.10.12.65": 1,
+    "10.10.12.66": 2,
+    "10.10.12.67": 3,
+    "10.10.12.60": 4,
+    "10.10.12.61": 5,
+    "10.10.12.62": 6,
+    "10.10.12.63": 7,
+    "10.10.12.64": 8
+  },
+  "Retention": {
+    "VitalHours": 24,
+    "WaveMinutes": 2,
+    "AlarmMinutes": 2
+  },
+  "AutoStartMonitor": true,
+  "MinimizeToTray": true,
+  "AutoStartSystem": false,
+  "EnableLogging": true,
+  "LogLevel": "debug"
+}
