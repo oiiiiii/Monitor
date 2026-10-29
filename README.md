@@ -210,6 +210,26 @@ monitor.exe --config config.toml --http-port 3001 --log-level info
 | `docs/第X阶段工作总结.md` | 分阶段开发过程记录与问题复盘 |
 | `deploy/standalone/` | 生产配置模板与启动器配置样例 |
 
+## 发布发行包
+
+编译产物（`*.exe`、`*.zip`）**不要提交进 git 仓库** —— 二进制文件会被永久写入历史，仓库体积只增不减。发行包统一通过 **GitHub Releases** 分发。
+
+```bash
+# 1. 按上文步骤构建三端产物，组装到 publish/ 目录
+# 2. 打包（脚本会正确处理中文文件名，避免 Windows 解压乱码）
+python deploy/pack-release.py --version 0.1.0
+# 产物：release/Monitor-0.1.0-win-x64.zip
+
+# 3. 打 tag 并创建 Release（需要安装 gh CLI 并登录）
+git tag v0.1.0
+git push origin v0.1.0
+gh release create v0.1.0 release/Monitor-0.1.0-win-x64.zip \
+  --title "v0.1.0 稳定版" \
+  --notes "首次归档发布：Rust 后端 + Web 前端 + 桌面客户端 + 历史查询工具"
+```
+
+没有 `gh` 时可在网页端操作：仓库页面右侧 **Releases → Create a new release**，填 tag 后把 zip 拖进附件区即可。
+
 ## 许可
 
 MIT License，详见 [LICENSE](LICENSE)。
